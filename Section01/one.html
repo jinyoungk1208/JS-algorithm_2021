@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function minNum(a, b, c) {
+      /*let result = Number.MAX_VALUE;
+
+      if(a < result) {
+        result = a;
+        if(b < a) {
+          result = b;
+          if(c < b) {
+            result = c;
+          }
+        } else if(c < a) {
+          result = c;
+          if(b < c) {
+            result = b;
+          }
+        }
+      }*/
+
+      let result;
+
+      if(a<b) result = a;
+      else result = b;
+      if(c<result) result = c;
+
+      return result;
+    }
+
+    console.log(minNum(6, 5, 11));
+  </script>
+</body>
+</html>
