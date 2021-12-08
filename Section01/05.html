@@ -10,11 +10,13 @@
 <body>
   <script>
     function minNum(arr) {
-      let result = Number.MAX_SAFE_INTEGER;
+      /*let result = Number.MAX_SAFE_INTEGER;
 
       for(let i=0; i<arr.length; i++) {
         if(arr[i] < result) result = arr[i];
-      }
+      }*/
+
+      let result = Math.min(...arr); // ...배열 = 배열을 하나하나 펼쳐줌(인자 값)
 
       return result;
     }
