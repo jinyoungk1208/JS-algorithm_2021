@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function findOddNum(arr) {
+      let result = [];
+
+      /*let odd = [];
+      for(let i=0; i<arr.length; i++) {
+        if(arr[i]%2 !== 0) {
+          odd.push(arr[i]);
+        }
+      }
+
+      let sum = 0;
+      for(let i=0; i<odd.length; i++) {
+        sum += odd[i];
+      }
+      result.push(sum);
+
+      let min = Math.min(...odd);
+      result.push(min);*/
+
+      let sum = 0;
+      let min = Number.MAX_SAFE_INTEGER;
+      for(let x of arr) {
+        if(x%2 === 1) {
+          sum += x;
+          if(x < min) {
+            min = x;
+          }
+        }
+      }
+
+      result.push(sum);
+      result.push(min);
+
+      return result;
+    }
+
+    console.log(findOddNum([12, 77, 38, 41, 53, 92, 85]));
+  </script>
+</body>
+</html>
