@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function upperCase(str) {
+      let result = 0;
+
+      for(let x of str) {
+        /*if(x === x.toUpperCase()) {
+          result++;
+        }*/
+
+        // ASCII code: 대문자 65~90 & 소문자 97~122
+        let num = x.charCodeAt();
+        if(num >= 65 && num <= 90) {
+          result++;
+        }
+      }
+
+      return result;
+    }
+
+    console.log(upperCase('KoreaTimeGood'));
+  </script>
+</body>
+</html>
