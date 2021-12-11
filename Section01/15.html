@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function centerStr(str) {
+      let result = "";
+
+      let num = Math.floor(str.length/2);
+      if(str.length%2 === 1) result = str.substr(num, 1); // substring(num, num+1)
+      else result += str.substr(num-1, 2); // substring(num-1, num+1)
+
+      return result;
+    }
+
+    console.log(centerStr('study'));
+  </script>
+</body>
+</html>
