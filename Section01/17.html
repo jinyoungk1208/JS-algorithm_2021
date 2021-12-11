@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function deleteDuplication(num, arr) {
+      let result = [];
+
+      /*for(let i=0; i<arr.length; i++) {
+        if(i === arr.indexOf(arr[i])) result.push(arr[i]);
+      }*/
+
+      result = arr.filter((val, idx) => {
+        // console.log(val, idx);
+        // if(arr.indexOf(arr[idx]) === idx) return true;
+        return arr.indexOf(arr[idx]) === idx;
+      });
+
+      return result;
+    }
+
+    console.log(deleteDuplication(5, ['good', 'time', 'good', 'time', 'student']));
+  </script>
+</body>
+</html>
