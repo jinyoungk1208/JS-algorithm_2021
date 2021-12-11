@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function UpperChange(str) {
+      let result = "";
+
+      for(let x of str) {
+        /*x = x.toUpperCase();
+        result += x;*/
+
+        /*if(x === x.toLowerCase()) result += x.toUpperCase();
+        else result += x;*/
+
+        // ASCII code
+        let num = x.charCodeAt();
+        if(num >= 97 && num <= 122) result += String.fromCharCode(num-32);
+        else result += x;
+      }
+
+      return result;
+    }
+
+    console.log(UpperChange('ItisTimeToStudy'));
+  </script>
+</body>
+</html>
