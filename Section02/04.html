@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function calculateScore(num, arr) {
+      let result = 0;
+
+      /*let resultArr = [];
+      for(let i=0; i<arr.length-1; i++) {
+        if(arr[i] === arr[i+1]) resultArr.push(++result);
+        else resultArr.push(0);
+      }
+      result = resultArr.reduce((prev, current) => { return prev+current; });*/
+
+      let cnt = 0;
+      for(let x of arr) {
+        if(x === 1) {
+          cnt++;
+          result += cnt;
+        } else {
+          cnt = 0;
+        }
+      }
+
+      return result;
+    }
+
+    console.log(calculateScore(10, [1, 0, 1, 1, 1, 0, 0, 1, 1, 0]));
+  </script>
+</body>
+</html>
