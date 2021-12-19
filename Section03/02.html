@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function palindrome(str) {
+      let result = "YES";
+
+      /*str = str.toUpperCase();
+      let newStr = "";
+      for(let i=0; i<str.length; i++) {
+        if(str[i] >= 65 && str[i] <= 90) {
+          newStr += str[i];
+        }
+      }
+
+      let len = newStr.length;
+      for(let j=0; j<len/2; j++) {
+        if(newStr[j] !== newStr[len-j-1]) result = "NO";
+        else result = "YES";
+      }*/
+
+      str = str.toLowerCase().replace(/[^a-z]/g, '');
+      if(str.split('').reverse().join('') !== str) result = "NO";
+
+      return result;
+    }
+
+    let str = 'found7, time: study; Yduts; emit, 7Dnuof';
+    console.log(palindrome(str));
+  </script>
+</body>
+</html>
