@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function shortestStr(str, ch) {
+      let result = [];
+
+      let num = 1000;
+      /*for(let i=0; i<str.length; i++) {
+        if(str[i] !== ch) num++;
+        else num = 0;
+        result.push(num);
+      }
+
+      num = 1000;
+      for(let i=str.length-1; i>=0; i--) {
+        if(str[i] !== ch) num++;
+        else num = 0;
+
+        if(result[i] > num) result[i] = num;
+      }*/
+
+      for(let x of str) {
+        if(x === ch) {
+          num = 0;
+          result.push(num);
+        } else {
+          num++;
+          result.push(num);
+        }
+      }
+
+      num = 1000;
+      for(let i=str.length-1; i>=0; i--) {
+        if(str[i] === ch) {
+          num = 0;
+        } else {
+          num++;
+          result[i] = Math.min(result[i], num);
+        }
+      }
+
+      return result;
+    }
+
+    console.log(shortestStr('teachermode', 'e'));
+  </script>
+</body>
+</html>
