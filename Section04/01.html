@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sumDigit(arr) {
+      let result = 0;
+      let max = Number.MIN_SAFE_INTEGER;
+
+      /*let newArr = [];
+      let sum = 0;
+      for(let i=0; i<arr.length; i++) {
+        for(let x of String(arr[i])) {
+          sum = 0;
+          sum += parseInt(x);
+        }
+        newArr.push(sum);
+      }
+
+      result = Math.max(...newArr);*/
+
+      for(let x of arr) {
+        /*let sum = 0;
+        let tmp = x;
+
+        while(tmp) { // tmp가 0일때까지 -> 컴퓨터는 0을 false로 인식
+          sum += (tmp%10);
+          tmp = Math.floor(tmp/10);
+        }*/
+        let sum = x.toString().split('').reduce((a, b) => a+Number(b), 0);
+
+        if(sum > max) {
+          max = sum;
+          result = x;
+        } else if(sum === max) {
+          if(x > result) result = x;
+        }
+      }
+
+      return result;
+    }
+
+    console.log(sumDigit([128, 460, 603, 40, 521, 137, 123]));
+  </script>
+</body>
+</html>
