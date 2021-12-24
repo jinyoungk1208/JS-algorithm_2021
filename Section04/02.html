@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function isPrime(num) {
+      if(num === 1) return false;
+      // for(let i=2; i<=parseInt(num/2); i++) {
+      for(let i=2; i<=parseInt(Math.sqrt(num)); i++) {
+        if(num%i === 0) return false;
+      }
+
+      return true;
+    }
+
+    function reversePrime(arr) {
+      let result = [];
+
+      for(let x of arr) {
+        /*let x_ = x.toString().split('').reverse().join('');
+        if(parseInt(x_)%2 !== 0 && parseInt(x_)%3 !== 0 && parseInt(x_)%5 !== 0 && parseInt(x_)%7 !== 0) {
+          result.push(parseInt(x_));
+        }*/
+
+        let res = 0;
+        while(x) {
+          let t = x%10;
+          res = res*10+t;
+          x = parseInt(x/10);
+        }
+        if(isPrime(res)) result.push(res);
+      }
+
+      return result;
+    }
+
+    console.log(reversePrime([32, 55, 62, 20, 250, 370, 200, 30, 100]));
+  </script>
+</body>
+</html>
