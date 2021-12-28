@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function presentList(arr) {
+      let result = 0;
+      // let x = arr[0].length;
+      let y = arr.length;
+
+      arr.sort((a, b) => (a[0]+a[1]) - (b[0]+b[1])); // 오름차순 정렬
+
+      for(let i=0; i<y; i++) {
+        let money = 28 - (arr[i][0]/2 + arr[i][1]);
+        let cnt = 1;
+
+        for(let j=0; j<i; j++) {
+          if(j!==i && (arr[j][0]+arr[j][1])>money) break;
+          if(j!==i && (arr[j][0]+arr[j][1])<=money) {
+            money -= (arr[j][0]+arr[j][1]);
+            cnt++;
+          }
+        }
+        result = Math.max(result, cnt);
+      }
+
+      /*let sumList = [];
+      for(let i=0; i<y; i++) {
+        let sum = 0;
+        for(let j=0; j<x; j++) {
+          sum += arr[i][j];
+        }
+        sumList.push(sum);
+      }
+      let total = 0;
+      for(let k=0; k<y; k++) {
+        total = 28 - (arr[k][0]/2 + arr[k][1]);
+        sumList.splice(k, 1);
+        let max = Number.MIN_SAFE_INTEGER;
+        let cnt = 0;
+        for(let x of sumList) {
+          while(total) {
+            total -= x;
+            cnt++;
+          }
+        }
+        if(cnt > max) max = cnt;
+      }
+      result = cnt;*/
+
+      return result;
+    }
+
+    let arr = [
+      [6, 6],
+      [2, 2],
+      [4, 3],
+      [4, 5],
+      [10, 3]
+    ];
+    console.log(presentList(arr));
+  </script>
+</body>
+</html>
